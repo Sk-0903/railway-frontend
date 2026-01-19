@@ -1,36 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Railway Reservation System</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>🚆 Railway Reservation System</h1>
+<div class="container">
+  <h1>🚆 Railway Reservation System</h1>
+  <p class="subtitle">Smart & Simple Ticket Booking</p>
 
-<div class="form">
-  <input type="number" id="pid" placeholder="Passenger ID">
-  <input type="text" id="name" placeholder="Passenger Name">
-  <input type="number" id="age" placeholder="Age">
+  <div class="card">
+    <h2>Passenger Details</h2>
 
-  <button onclick="bookTicket()">Book Ticket</button>
-  <button onclick="cancelTicket()">Cancel Ticket</button>
+    <input type="number" id="pid" placeholder="Passenger ID">
+    <input type="text" id="name" placeholder="Passenger Name">
+    <input type="number" id="age" placeholder="Age">
+
+    <div class="btn-group">
+      <button class="btn book" onclick="bookTicket()">Book Ticket</button>
+      <button class="btn cancel" onclick="cancelTicket()">Cancel Ticket</button>
+    </div>
+  </div>
+
+  <div class="tables">
+    <div class="table-card">
+      <h2>✅ Confirmed Tickets</h2>
+      <table id="confirmed">
+        <tr>
+          <th>ID</th><th>Name</th><th>Age</th><th>Seat</th>
+        </tr>
+      </table>
+    </div>
+
+    <div class="table-card">
+      <h2>⏳ Waiting List</h2>
+      <table id="waiting">
+        <tr>
+          <th>ID</th><th>Name</th><th>Age</th>
+        </tr>
+      </table>
+    </div>
+  </div>
 </div>
-
-<h2>Confirmed Tickets</h2>
-<table id="confirmed">
-  <tr>
-    <th>ID</th><th>Name</th><th>Age</th><th>Seat</th>
-  </tr>
-</table>
-
-<h2>Waiting List</h2>
-<table id="waiting">
-  <tr>
-    <th>ID</th><th>Name</th><th>Age</th>
-  </tr>
-</table>
 
 <script src="script.js"></script>
 </body>
 </html>
+
